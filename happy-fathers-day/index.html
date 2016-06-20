@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Happy Father's Day</title>
+		<link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+	  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+		<style>
+			body {
+				background-color: #ECECE9;
+			}
+			.container {
+				color: #BCBCB3;
+				margin: auto;
+		    width: 50%;
+/* 		    border-left: 1px solid white;
+		    border-right: 1px solid white; */
+		    padding: 10px;
+			}
+			section {
+				margin: 0px auto;
+			}
+			#dad-son-dive {
+				display: block;
+				margin: 30px 0px;
+		    border-left: 1px solid white;
+		    border-right: 1px solid white;
+				margin-left: auto;
+				margin-right: auto;
+				height: 200px;
+				width: 200px;
+				border-radius: 50%;
+				-webkit-box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.22);
+				-moz-box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.22);
+				box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.3);
+			}
+			.school {
+				display: inline-block;
+			}
+			.school-img {
+				width: 40%;
+				height: 200px;
+				padding: 0px 30px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			section.cardfan {
+			  height: 225px;
+			  margin: 2rem 5em 0;
+			  position: relative;
+			}
+			section.cardfan img {
+			  position: absolute;
+			  left: 100px;
+			  width: 300px;
+			  height: 200px;
+			  border: 1px solid #bbb;
+			  border-radius: 5%;
+			  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
+			  transform-origin: center 400px;
+			  transition: all .25s linear;
+			}
+			section.cardfan img:nth-child(1) {
+			  transform: rotate(-4deg);
+			}
+			section.cardfan img:nth-child(2) {
+			  transform: rotate(-2deg);
+			}
+			section.cardfan img:nth-child(3) {
+			  transform: rotate(0deg);
+			}
+			section.cardfan img:nth-child(4) {
+			  transform: rotate(2deg);
+			}
+			section.cardfan img:nth-child(5) {
+			  transform: rotate(4deg);
+			}
+			section.cardfan:hover img:nth-child(1) {
+			  transform: translate(-200px, 0px) rotate(-35deg);
+			}
+			section.cardfan:hover img:nth-child(2) {
+			  transform: translate(-100px, 0px) rotate(-14deg);
+			}
+			section.cardfan:hover img:nth-child(3) {
+			  transform: rotate(0deg);
+			}
+			section.cardfan:hover img:nth-child(4) {
+			  transform: translate(100px, 0px) rotate(14deg);
+			}
+			section.cardfan:hover img:nth-child(5) {
+			  transform: translate(200px, 0px) rotate(35deg);
+			}
+			.cars {
+				width: 545px;
+				margin-left: auto;
+				margin-right: auto;
+				display: inherit;
+			}
+			.lived img {
+				width: 545px;
+				margin-left: 30px;
+				display: inline;
+				border-radius: 2%;
+			}
+			p {
+				font-family: "Titillium Web";
+				font-size: 10em;
+				color: white;
+		    text-align: justify;
+		    text-justify: inter-word;
+			}
+			.first-name {
+				transform: rotate(-90deg);
+		    position: fixed;
+		    width: 250px;
+		    height: 100px;
+		    top: 3.5%;
+		    left: 4%;
+		    text-align: right;
+			}
+			.last-name {
+				transform: rotate(90deg);
+		    position: fixed;
+		    width: 250px;
+		    height: 100px;
+		    top: -12%;
+		    right: 4%;
+		    text-align: left;
+			}
+			h3 {
+				font-family: "Titillium Web";
+				font-size: 26px;
+				margin: 0px 5px 0px 5px;
+			}
+			li {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 1em;
+			}
+			.map {
+				padding-top: 5px;
+				width: 100%;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<p class="first-name">Mike</p>
+		<p class="last-name">Crocker</p>
+
+		<img id="dad-son-dive" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAWmAAAAJDI5OWZhMzA1LTc2ZTEtNDc4Ny1iY2UyLTA0ODQ1ZGViNmVhZg.jpg" alt="Mike Crocker diving with Robert Crocker">
+
+		<section class="container">
+
+			<h3>Places Lived</h3>
+			<section class="lived">
+				<img src="https://racereach.com/files/uploads/1440796518_Memphis.jpg" alt="Memphis, Tennessee">
+				<img src="http://cityhub.movoto.com/1465458383075_11-places-in-florida-with-the-best-home-appreciation-rates-featured.jpg" alt="Florida">
+			</section>
+
+			<h3>Places Studied</h3>
+			<section class="schools">
+				<img class="school-img" src="https://pbs.twimg.com/profile_images/611162245972688896/do-AnHGp.png" alt="Bartlett High School">
+				<img class="school-img" src="http://ecx.images-amazon.com/images/I/41PDNvi3c0L.jpg" alt="Memphis State Logo">
+			</section>
+
+			<h3>Places Worked</h3>
+			<section class="work">
+				<li>Goldsmith Camera Department</li>
+				<li>Motion Pictures Timing Department</li>
+				<li>Crocker Photography</li>
+				<li>H20 Scuba Center</li>
+			</section>
+
+			<h3>Dive Certifications</h3>
+			<section class="cardfan">
+				<img src="images/master-instructor.png" alt="Master Instructor">
+				<img src="images/open-water-instructor.png" alt="Open Water Instructor">
+				<img src="images/master-diver.png" alt="Master Diver">
+				<img src="images/advanced-open-water.png" alt="Advanced Open Water">
+				<img src="images/open-water.png" alt="Open Water card">
+			</section>
+
+			<h3>Cars Collected</h3>
+			<section class="cars">
+				<img src="images/ranchero-73.png" alt="1973 Ranchero">
+				<img src="images/cuda-70.png" alt="1970 Cuda">
+				<img src="images/charger-70.png" alt="1970 Charger">
+				<img src="images/cuda-73.png" alt="1973 Cuda">
+				<img src="images/torino-76.png" alt="1976 Gran Torino">
+			</section>
+
+			<h3>Places Dove</h3>
+			<div id='map_geo' class='map'> </div>
+
+			<h3>Buildings Owned</h3>
+			<ul>
+				<li>Jackson: 331 North Parkway</li>
+				<li>Memphis: 3711 Union Extended</li>
+			</ul>
+
+			<h3>Other Notables</h3>
+			<ul>
+				<li>Taught at Union for 13 years.</li>
+				<ul><li>Number of students taught exceeds 3k!</li></ul>
+				<li>Hundreds of couples tieing the knot have been photographed.</li>
+			</ul>
+
+		</section>
+
+		<script>
+		L.mapbox.accessToken = 'pk.eyJ1IjoicmNyb2NrZXIxMyIsImEiOiIxcWJvcnNvIn0.k2YpWuQ5oL8qpnoL5BQ0pg';
+		var geojson = [
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-77.396280,25.034280] // Bahamas
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-81.254600,19.313300] // Cayman Islands
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-86.922343,20.422984] // Cozumel
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-86.851528,21.161908] // Cancun
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-87.073885,20.629559] // Playa Del Carmen
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-60.978893,13.909444] // St. Lucia
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-64.953401,18.335361] // St. Thomas
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-63.911330,10.997072] // Margarita Islands
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-59.543198,13.193887] // Barbedos
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-86.495783,30.393534] // Destin
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-85.660206,30.158813] // Panama City
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-81.779987,24.555059] // Key West
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-92.031260,35.491468] // Heber Springs
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-80.191790,25.761680] // Miami
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-85.953479,30.773236] // Vortex Srpings
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-87.076030,20.637877] // Cenotes
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-86.535018,16.323965] // Roatan
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-69.968338,12.521110] // Aruba
+		    }
+		  },
+		  {
+		    "type": "Feature",
+		    "geometry": {
+		      "type": "Point",
+		      "coordinates": [-68.990020,12.169570] // Curacao
+		    }
+		  }
+		];
+
+		var mapGeo = L.mapbox.map('map_geo', 'mapbox.light')
+		  .setView([26, -77], 4);
+
+		var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);
+		mapGeo.scrollWheelZoom.disable();
+		</script>
+
+	</body>
+</html>
