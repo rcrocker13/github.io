@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Getting Started with D3</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<style>
+		header {
+			padding-top: 15px;
+			padding-left: 15px;
+			background-color: #3D3D3D;
+			color: #EEE;
+		}
+		footer {
+			padding-top: 5px;
+			padding-left: 5px;
+			background-color: #3D3D3D;
+			color: #EEE;
+		}
+		.workspace {
+			background-color: #EDEDEB;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<header class="col-md-12">
+					<h1>Let's Build a Bar Chart... Together</h1>
+				</header>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<h4>HTML</h4>
+					<ul>
+						<li>head</li>
+						<li>meta</li>
+						<li>body</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h4>CSS</h4>
+					<ul>
+						<li>selector</li>
+						<li>values</li>
+						<li>hover</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h4>SVG</h4>
+					<ul>
+						<li>nesting</li>
+						<li>rect</li>
+						<li>properties</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h4>D3</h4>
+					<ul>
+						<li>data</li>
+						<li>select, enter, append</li>
+						<li>transition</li>
+					</ul>
+				</div>
+			</div>
+				<div class="row workspace">
+					<div id="start" class="col-sm-6">
+						<h5>Start</h5>
+					</div>
+					<div id="goal" class="col-sm-6">
+						<h5>Goal</h5>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<footer class="col-md-12">
+					<p>
+						For more information reachout to SFdataviz@slalom.com.
+					</p>
+				</footer>
+			</div>
+		</div>
+		<script>
+			var margin = {top: 20, right: 10, bottom: 20, left: 10};
+			var height = 450 - margin.top - margin.bottom;
+			var width = 600 - margin.right - margin.left;
+			var startSvg = d3.select("#start").append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.style("border", "1px solid #ccc")
+				.style("border-radius", "5px")
+				.style("background-color", "#FFF");
+
+			// Append Goals Bar Chart
+			var goalSvg = d3.select("#goal").append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.style("border", "1px solid #ccc")
+				.style("border-radius", "5px")
+				.style("background-color", "#FFF");
+
+			d3.csv("mtcars.csv", function(data) {
+
+			data = data.map(function(d) {
+
+				return {
+					car: d.car,
+					mpg: +d.mpg,
+					cylinders: +d.cyl,
+					displacement: +d.disp,
+					horsePower: +d.hp,
+					drat: +d.drat,
+					weight: +d.wt,
+					quarterMile: +d.qt,
+					vs: +d.vs,
+					am: +d.am,
+					gears: +d.gear,
+					carburetors: +d.carb
+				};
+
+			});
+
+			console.log(data);
+
+			var xScale = d3.scale.linear()
+				.domain(d3.extent(data, function(d) { return d.horsePower; }))
+				.range([0, width]);
+
+			var yScale = d3.scale.ordinal()
+				.domain(data.map(function(d) { return d.car; }))
+				.rangeRoundBands([height, 0], 0, 1);
+
+			bars = goalSvg.selectAll("rect")
+				.data(data).enter()
+				.append("rect")
+				.attr("x", 0)
+				.attr("y", function(d) { return yScale(d.car); })
+				.attr("height", height / data.length - 2.5)
+				.attr("width", function(d) { return xScale(d.horsePower); })
+				.attr("fill", "steelblue");
+
+			});
+
+			</script>
+		</body>
+</html>
