@@ -1,0 +1,42 @@
+#chart {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+text {
+	font-family: "Lato";
+	font-weight: 400;
+}
+
+.bar {
+  fill: #FF6865;
+}
+
+.bar:hover {
+  fill: #1F334A;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path,
+.x.axis line {
+  display: none;
+}
+
+.label {
+	font-family: "Lato";
+	font-weight: 100;
+	font-size: 1.5em;
+}
