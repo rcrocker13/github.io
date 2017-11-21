@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Smoothed D3.js Radar Chart</title>
+
+		<!-- Flex Box -->
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+
+		<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300" rel="stylesheet">
+
+		<!-- jQuery -->
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous">
+	  </script>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+		<!-- Tableau JS API -->
+		<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/tableau-2.min.js"></script>
+
+		<style>
+			body {
+				margin-left:  auto;
+				margin-right: auto;
+				font-family: 'Work Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 100;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			h1 {
+				font-weight: 100;
+				font-size:  36px;
+				float: left;
+				text-align: left;
+			}
+			svg {
+				margin-top: 100px;
+				margin-left:  115px;
+				position: absolute;
+			}
+			.leftSide {
+				font-weight:  300;
+				font-size:  16px;
+				text-align:  left;
+			}
+			.rightSide {
+				font-weight:  200;
+				font-size:  16px;
+				text-align:  left;
+			}
+			.rightSide.social {
+				font-weight:  200;
+				font-size:  14px;
+				text-align:  left;
+			}
+			.footer {
+				margin-top:  10px;
+			}
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			.tooltip {
+				fill: #333333;
+			}
+			.outerCircle {
+				stroke:  ;
+			}
+			.clickable {
+				cursor:  pointer;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="tableauViz"></div>
+		<div class="row radarChart"></div>
+
+		<script src="radarChart.js"></script>
+		<script>
+
+      /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+
+			//////////////////////////////////////////////////////////////
+			//////////////////////// Set-Up //////////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var margin = {top: 50,right: 50, bottom: 50, left: 50},
+				width = Math.min(250, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+			//////////////////////////////////////////////////////////////
+			////////////////////////// Data //////////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var data = [
+					  [//Las Serranias Decaf
+							{axis:"Aroma",value:5},
+							{axis:"Sweetness",value:6},
+							{axis:"Flavor",value:7},
+							{axis:"Body",value:8},
+							{axis:"Acidity",value:5},
+							{axis:"Balance",value:5},
+							{axis:"After Taste",value:4}
+ 					  ]
+					];
+			//////////////////////////////////////////////////////////////
+			//////////////////// Draw the Chart //////////////////////////
+			//////////////////////////////////////////////////////////////
+
+			var color = d3.scale.ordinal()
+				.range(["#E8AF2E","#00509C","#77B53E", "#1DB552"]);
+
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  maxValue: 10,
+			  levels: 5,
+			  roundStrokes: true,
+			  color: color
+			};
+			//Call function to draw the Radar chart
+			RadarChart(".radarChart", data, radarChartOptions);
+
+			var placeholderDiv = document.getElementById("tableauViz");
+			var url = "https://public.tableau.com/views/SevenSeedsBackground/Dashboard1?:embed=y&:display_count=yes&publish=yes";
+			var options = {
+			  style: "inline-block",
+			  height: "655px",
+			  width: "530px",
+			  hideTabs: true,
+			  hideToolbar: true
+			};
+
+			viz = new tableau.Viz(placeholderDiv, url, options);
+
+			// Remove nasty scroll bars from your iframe
+			document.querySelector("iframe").setAttribute("scrolling", "no");
+
+		</script>
+	</body>
+</html>
